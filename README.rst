@@ -29,6 +29,7 @@ Installing Nginx modules requires rebuilding Nginx from source:
     $ export BOOST_INCLUDE_PATH=/path/to/boost/includes/
     $ export LIBBOOST_THREAD=/path/to/libboost_thread/file
     $ export LIBBOOST_FILESYSTEM=/path/to/libboost_filesystem/file
+    $ export LIBBOOST_SYSTEM=/path/to/libboost_system/file
 
   Ideally there will be a better way to do this eventually, but this
   is easy.
