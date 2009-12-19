@@ -5,7 +5,6 @@ SETTING_MISSING="environment variable must be set - see README.rst for details"
 : ${LIBMONGOCLIENT:?$SETTING_MISSING}
 : ${LIBBOOST_THREAD:?$SETTING_MISSING}
 : ${LIBBOOST_FILESYSTEM:?$SETTING_MISSING}
-: ${LIBBOOST_SYSTEM:?$SETTING_MISSING}
 
 if ! (cd $ngx_addon_dir; scons .); then
     exit 1
