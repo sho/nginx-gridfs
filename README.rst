@@ -31,8 +31,13 @@ Installing Nginx modules requires rebuilding Nginx from source:
     $ export LIBBOOST_FILESYSTEM=/path/to/libboost_filesystem/file
     $ export LIBBOOST_SYSTEM=/path/to/libboost_system/file
 
+* For some versions of boost you'll need to set the following as
+  well::
+
+    $ export LIBBOOST_SYSTEM=/path/to/libboost_system/file
+
   Ideally there will be a better way to do this eventually, but this
-  is easy.
+  was easy to implement.
 
 * Now build::
 
@@ -59,6 +64,9 @@ which to store files. **mongod_host** and **gridfs_root_collection**
 can be specified but default to the values given in the configuration
 above.
 
+This will set up Nginx to serve the file in gridfs with filename *foo*
+for any request to */gridfs/foo*
+
 Known Issues / TODO / Things You Should Hack On
 ===============================================
 
@@ -69,7 +77,15 @@ Known Issues / TODO / Things You Should Hack On
 * Use a single persistent connection
 * URL decode filenames
 * Better error handling / logging
+* Better config / build process (just embed C driver?)
+* Support for getting files by _id (in case there are duplicate filenames)
+
+Credits
+=======
+
+* Sho Fukamachi (sho) - towards compatibility with newer boost versions
 
 License
 =======
-**nginx-gridfs** is licensed under the Apache License, Version 2.0. See *LICENSE* for details.
+**nginx-gridfs** is licensed under the Apache License, Version
+2.0. See *LICENSE* for details.
